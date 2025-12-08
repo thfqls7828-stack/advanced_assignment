@@ -1,4 +1,4 @@
-import 'package:advanced_assignment/Score.dart';
+import 'package:advanced_assignment/score.dart';
 
 class ScoreStudent extends Score {
   ScoreStudent({required super.score, required this.name});
