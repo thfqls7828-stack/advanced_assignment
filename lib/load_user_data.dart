@@ -1,8 +1,10 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:advanced_assignment/score_student.dart';
 
-List<ScoreStudent> loadStudentData(String filePath) {
+// txt 파일의 데이터를 List<ScoreStudent>에 담는 함수
+Future<List<ScoreStudent>> loadStudentData(String filePath) async {
   List<ScoreStudent> studentList = [];
 
   try {
@@ -22,4 +24,21 @@ List<ScoreStudent> loadStudentData(String filePath) {
     exit(1);
   }
   return studentList;
+}
+
+// 학생 이름을 입력 받아 출력하는 함수
+void printStudentInfo(List<ScoreStudent> studentList) {
+  while (true) {
+    for (ScoreStudent studentInfo in studentList) {
+      print("어떤 학생의 점수를 확인하시겠습니까?");
+      String? name = stdin.readLineSync(encoding: utf8);
+
+      if (studentInfo.name == name) {
+        studentInfo.showInfo();
+        return;
+      } else {
+        print("잘못된 학생 이름을 입력하셨습니다. 다시 입력해주세요.");
+      }
+    }
+  }
 }
