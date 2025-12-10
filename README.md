@@ -104,3 +104,7 @@ Future<void> saveResults(String filePath, String content) async {
 - 파일에서 읽어온 데이터를 List<ScoreStudent>에 저장 -> studentList
 - 반복문을 돌며, studentList 내 학생의 점수 출력 -> printStudentInfo()
 - 출력된 학생의 결과를 result.txt 파일에 저장
+
+## 실행결과
+<img width="382" height="118" alt="image" src="https://github.com/user-attachments/assets/171694ed-9fdc-4fef-b93a-66655e85e8e9" />
+
